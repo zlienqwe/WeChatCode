@@ -81,10 +81,9 @@
 		8AACE4901BA02973000B0FD4 /* WeChatCode */ = {
 			isa = PBXGroup;
 			children = (
+				8AACE4B71BA0297A000B0FD4 /* Controller */,
 				8AACE4951BA02973000B0FD4 /* AppDelegate.h */,
 				8AACE4961BA02973000B0FD4 /* AppDelegate.m */,
-				8AACE4981BA02973000B0FD4 /* ViewController.h */,
-				8AACE4991BA02973000B0FD4 /* ViewController.m */,
 				8AACE49B1BA02973000B0FD4 /* Main.storyboard */,
 				8AACE49E1BA02973000B0FD4 /* Images.xcassets */,
 				8AACE4A01BA02973000B0FD4 /* LaunchScreen.xib */,
@@ -117,6 +116,15 @@
 				8AACE4AC1BA02973000B0FD4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AACE4B71BA0297A000B0FD4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8AACE4981BA02973000B0FD4 /* ViewController.h */,
+				8AACE4991BA02973000B0FD4 /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
