@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -22,10 +23,13 @@
     
     //设置窗口根控制器
     RootViewController *rootViewController = [[RootViewController alloc] init];
-    [self.window setRootViewController:rootViewController];
+//    [self.window setRootViewController:rootViewController];
+    self.window.rootViewController = rootViewController;
     
     // Override point for customization after application launch.
-    
+
+    //让窗口显示出来
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

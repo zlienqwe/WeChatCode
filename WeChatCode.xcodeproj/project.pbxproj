@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A1ABB191BA11175009998A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1ABB171BA11175009998A4 /* Main.storyboard */; };
 		8AACE4941BA02973000B0FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4931BA02973000B0FD4 /* main.m */; };
 		8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4961BA02973000B0FD4 /* AppDelegate.m */; };
 		8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4991BA02973000B0FD4 /* RootViewController.m */; };
@@ -27,7 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8A1ABB181BA11175009998A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AACE48E1BA02973000B0FD4 /* WeChatCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACE4921BA02973000B0FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AACE4931BA02973000B0FD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				8AACE4961BA02973000B0FD4 /* AppDelegate.m */,
 				8AACE49E1BA02973000B0FD4 /* Images.xcassets */,
 				8AACE4A01BA02973000B0FD4 /* LaunchScreen.xib */,
-				8A1ABB171BA11175009998A4 /* Main.storyboard */,
 				8AACE4911BA02973000B0FD4 /* Supporting Files */,
 			);
 			path = WeChatCode;
@@ -215,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A1ABB191BA11175009998A4 /* Main.storyboard in Resources */,
 				8AACE4A21BA02973000B0FD4 /* LaunchScreen.xib in Resources */,
 				8AACE49F1BA02973000B0FD4 /* Images.xcassets in Resources */,
 			);
@@ -260,14 +256,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8A1ABB171BA11175009998A4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8A1ABB181BA11175009998A4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8AACE4A01BA02973000B0FD4 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
