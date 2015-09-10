@@ -22,22 +22,24 @@
     self.title = @"朋友圈";
     CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
-
     [self.view addSubview:self.tableView];
-    [self.tableView addSubview:[self createHeaderView]];
+    self.tableView.tableHeaderView = [self createHeaderView];
     [self.tableView addSubview:[self createBodyView]];
 }
 
 
--(UILabel *)createHeaderView{
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
-    headerLabel.backgroundColor =[UIColor redColor];
-    return headerLabel;
+
+-(UIView *)createHeaderView{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,220)];
+    headerView.backgroundColor =[UIColor redColor];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 220)];
+    imageView.image = [UIImage imageNamed:@"Default-568h"];
+    [headerView addSubview:imageView];
+    return headerView;
 }
 -(UILabel *)createBodyView{
-    UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, self.view.frame.size.height/2)];
+    UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 220, self.view.frame.size.width, self.view.frame.size.height/2)];
     bodyLabel.backgroundColor = [UIColor blueColor];
-    
     return bodyLabel;
 }
 
