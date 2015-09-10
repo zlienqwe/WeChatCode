@@ -14,6 +14,7 @@
 		8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4991BA02973000B0FD4 /* RootViewController.m */; };
 		8AACE49F1BA02973000B0FD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AACE49E1BA02973000B0FD4 /* Images.xcassets */; };
 		8AACE4AE1BA02973000B0FD4 /* WeChatCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4AD1BA02973000B0FD4 /* WeChatCodeTests.m */; };
+		8ADDE0861BA1860B004B1D01 /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDE0851BA1860B004B1D01 /* ContentModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		8AACE4A71BA02973000B0FD4 /* WeChatCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeChatCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACE4AC1BA02973000B0FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AACE4AD1BA02973000B0FD4 /* WeChatCodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatCodeTests.m; sourceTree = "<group>"; };
+		8ADDE0841BA1860B004B1D01 /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
+		8ADDE0851BA1860B004B1D01 /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 		8A1ABB291BA14EDB009998A4 /* FriendsOfCircle */ = {
 			isa = PBXGroup;
 			children = (
+				8ADDE0831BA185E9004B1D01 /* Model */,
 				8A1ABB2A1BA14EF8009998A4 /* Controller */,
 			);
 			name = FriendsOfCircle;
@@ -151,6 +155,15 @@
 				8AACE4991BA02973000B0FD4 /* RootViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		8ADDE0831BA185E9004B1D01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8ADDE0841BA1860B004B1D01 /* ContentModel.h */,
+				8ADDE0851BA1860B004B1D01 /* ContentModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */,
+				8ADDE0861BA1860B004B1D01 /* ContentModel.m in Sources */,
 				8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */,
 				8A1ABB311BA15C83009998A4 /* CircleViewController.m in Sources */,
 				8AACE4941BA02973000B0FD4 /* main.m in Sources */,
