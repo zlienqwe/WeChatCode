@@ -31,8 +31,10 @@
 
 -(UIButton *) createGoToNextViewButton{
     UIButton *goToNextViewButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    goToNextViewButton.frame = CGRectMake(10, 100, 80, 40);
-    goToNextViewButton.backgroundColor = [UIColor redColor];
+    goToNextViewButton.frame = CGRectMake(self.view.bounds.size.width/2 - 40, self.view.bounds.size.height/2 - 60, 80, 40);
+    goToNextViewButton.backgroundColor = [UIColor blackColor];
+    [goToNextViewButton setTitle:@"朋友圈" forState:UIControlStateNormal];
+    [goToNextViewButton setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
     [goToNextViewButton addTarget:self action:@selector(goToNextView) forControlEvents:UIControlEventTouchDown];
     return goToNextViewButton;
 }
