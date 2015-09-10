@@ -20,10 +20,14 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"朋友圈";
+    CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
 
-    [self.view addSubview:[self createHeaderView]];
-    [self.view addSubview:[self createBodyView]];
-    }
+    [self.view addSubview:self.tableView];
+    [self.tableView addSubview:[self createHeaderView]];
+    [self.tableView addSubview:[self createBodyView]];
+}
+
 
 -(UILabel *)createHeaderView{
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
@@ -31,7 +35,7 @@
     return headerLabel;
 }
 -(UILabel *)createBodyView{
-    UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, self.view.frame.size.height)];
+    UILabel *bodyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, self.view.frame.size.height/2)];
     bodyLabel.backgroundColor = [UIColor blueColor];
     
     return bodyLabel;

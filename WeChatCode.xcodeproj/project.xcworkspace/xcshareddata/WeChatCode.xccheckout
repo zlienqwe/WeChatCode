@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B866C096-1C74-4D77-8233-59533F893808</string>
 	<key>IDESourceControlProjectName</key>
-	<string>WeChatCode</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F3A7B01797004856949E2814852B2403183DA8D6</key>
 		<string>github.com:zlienqwe/WeChatCode.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WeChatCode.xcodeproj</string>
+	<string>WeChatCode.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F3A7B01797004856949E2814852B2403183DA8D6</key>

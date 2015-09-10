@@ -10,4 +10,5 @@
 
 @interface CircleViewController : UIViewController
 
+@property(nonatomic) UITableView *tableView;
 @end
