@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -20,11 +21,15 @@
     
     //创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    //设置窗口根控制器
     RootViewController *rootViewController = [[RootViewController alloc] init];
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    
+    
+
 //    [self.window setRootViewController:rootViewController];
-    self.window.rootViewController = rootViewController;
+    self.window.rootViewController = navigationController;
+    
     
     // Override point for customization after application launch.
 
