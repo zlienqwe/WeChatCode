@@ -14,7 +14,20 @@
 
 @implementation CircleViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:[self createHeaderView]];
 
+}
+
+
+-(UILabel *)createHeaderView{
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
+    headerLabel.backgroundColor =[UIColor redColor];
+    return headerLabel;
+}
 
 
 
