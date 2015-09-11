@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CE9D79F44C4B209812A3299 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F4A0EFDDEAFBCA96CAC361 /* libPods.a */; };
 		8A1ABB261BA14C4A009998A4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A1ABB251BA14C4A009998A4 /* Default-568h@2x.png */; };
 		8A1ABB311BA15C83009998A4 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ABB301BA15C83009998A4 /* CircleViewController.m */; };
+		8A3C4A151BA2CE47002AE7FA /* UrlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C4A141BA2CE47002AE7FA /* UrlHelper.m */; };
+		8AA2C1BD1BA2A1CB001FEBFA /* CircleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */; };
+		8AA2C1C11BA2AACB001FEBFA /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1C01BA2AACB001FEBFA /* ContentModel.m */; };
 		8AACE4941BA02973000B0FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4931BA02973000B0FD4 /* main.m */; };
 		8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4961BA02973000B0FD4 /* AppDelegate.m */; };
 		8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4991BA02973000B0FD4 /* RootViewController.m */; };
 		8AACE49F1BA02973000B0FD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AACE49E1BA02973000B0FD4 /* Images.xcassets */; };
 		8AACE4AE1BA02973000B0FD4 /* WeChatCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4AD1BA02973000B0FD4 /* WeChatCodeTests.m */; };
-		8ADDE0861BA1860B004B1D01 /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDE0851BA1860B004B1D01 /* ContentModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +31,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02F4A0EFDDEAFBCA96CAC361 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CB3F4EB5181BEA17ED737F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8A1ABB251BA14C4A009998A4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../../Desktop/Default-568h@2x.png"; sourceTree = "<group>"; };
 		8A1ABB2F1BA15C83009998A4 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
 		8A1ABB301BA15C83009998A4 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
+		8A3C4A131BA2CE47002AE7FA /* UrlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlHelper.h; sourceTree = "<group>"; };
+		8A3C4A141BA2CE47002AE7FA /* UrlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlHelper.m; sourceTree = "<group>"; };
+		8AA2C1BB1BA2A1CB001FEBFA /* CircleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleTableViewCell.h; sourceTree = "<group>"; };
+		8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleTableViewCell.m; sourceTree = "<group>"; };
+		8AA2C1BF1BA2AACB001FEBFA /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
+		8AA2C1C01BA2AACB001FEBFA /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		8AACE48E1BA02973000B0FD4 /* WeChatCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACE4921BA02973000B0FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AACE4931BA02973000B0FD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,8 +53,7 @@
 		8AACE4A71BA02973000B0FD4 /* WeChatCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeChatCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACE4AC1BA02973000B0FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AACE4AD1BA02973000B0FD4 /* WeChatCodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatCodeTests.m; sourceTree = "<group>"; };
-		8ADDE0841BA1860B004B1D01 /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
-		8ADDE0851BA1860B004B1D01 /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
+		F190514D8DD1E9C9ACC83BA5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE9D79F44C4B209812A3299 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23F3FC5491E941489A5DA977 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F190514D8DD1E9C9ACC83BA5 /* Pods.debug.xcconfig */,
+				5CB3F4EB5181BEA17ED737F1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8A1ABB0F1BA10B0A009998A4 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +95,8 @@
 		8A1ABB291BA14EDB009998A4 /* FriendsOfCircle */ = {
 			isa = PBXGroup;
 			children = (
-				8ADDE0831BA185E9004B1D01 /* Model */,
+				8AA2C1C21BA2AC27001FEBFA /* Model */,
+				8AA2C1BE1BA2A1D2001FEBFA /* View */,
 				8A1ABB2A1BA14EF8009998A4 /* Controller */,
 			);
 			name = FriendsOfCircle;
@@ -90,12 +111,41 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		8A3C4A121BA2CE2C002AE7FA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8A3C4A131BA2CE47002AE7FA /* UrlHelper.h */,
+				8A3C4A141BA2CE47002AE7FA /* UrlHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		8AA2C1BE1BA2A1D2001FEBFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8AA2C1BB1BA2A1CB001FEBFA /* CircleTableViewCell.h */,
+				8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8AA2C1C21BA2AC27001FEBFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8AA2C1BF1BA2AACB001FEBFA /* ContentModel.h */,
+				8AA2C1C01BA2AACB001FEBFA /* ContentModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		8AACE4851BA02973000B0FD4 = {
 			isa = PBXGroup;
 			children = (
 				8AACE4901BA02973000B0FD4 /* WeChatCode */,
 				8AACE4AA1BA02973000B0FD4 /* WeChatCodeTests */,
 				8AACE48F1BA02973000B0FD4 /* Products */,
+				23F3FC5491E941489A5DA977 /* Pods */,
+				E9B3DF81BC1CCE6C68C8A2A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +161,7 @@
 		8AACE4901BA02973000B0FD4 /* WeChatCode */ = {
 			isa = PBXGroup;
 			children = (
+				8A3C4A121BA2CE2C002AE7FA /* Helper */,
 				8A1ABB291BA14EDB009998A4 /* FriendsOfCircle */,
 				8A1ABB0F1BA10B0A009998A4 /* Root */,
 				8AACE4951BA02973000B0FD4 /* AppDelegate.h */,
@@ -157,13 +208,12 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		8ADDE0831BA185E9004B1D01 /* Model */ = {
+		E9B3DF81BC1CCE6C68C8A2A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8ADDE0841BA1860B004B1D01 /* ContentModel.h */,
-				8ADDE0851BA1860B004B1D01 /* ContentModel.m */,
+				02F4A0EFDDEAFBCA96CAC361 /* libPods.a */,
 			);
-			name = Model;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AACE4B11BA02973000B0FD4 /* Build configuration list for PBXNativeTarget "WeChatCode" */;
 			buildPhases = (
+				A966843F3112C7CD06EE6287 /* Check Pods Manifest.lock */,
 				8AACE48A1BA02973000B0FD4 /* Sources */,
 				8AACE48B1BA02973000B0FD4 /* Frameworks */,
 				8AACE48C1BA02973000B0FD4 /* Resources */,
+				820DF22CDA7478296CF3001A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,16 +312,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		820DF22CDA7478296CF3001A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A966843F3112C7CD06EE6287 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8AACE48A1BA02973000B0FD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */,
-				8ADDE0861BA1860B004B1D01 /* ContentModel.m in Sources */,
+				8AA2C1C11BA2AACB001FEBFA /* ContentModel.m in Sources */,
+				8A3C4A151BA2CE47002AE7FA /* UrlHelper.m in Sources */,
 				8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */,
 				8A1ABB311BA15C83009998A4 /* CircleViewController.m in Sources */,
 				8AACE4941BA02973000B0FD4 /* main.m in Sources */,
+				8AA2C1BD1BA2A1CB001FEBFA /* CircleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +462,7 @@
 		};
 		8AACE4B21BA02973000B0FD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F190514D8DD1E9C9ACC83BA5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeChatCode/Info.plist;
@@ -385,6 +473,7 @@
 		};
 		8AACE4B31BA02973000B0FD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CB3F4EB5181BEA17ED737F1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeChatCode/Info.plist;

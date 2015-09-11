@@ -18,15 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //设置窗口背景颜色，默认为黑色
+
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Main";
 
-    //把welcomeLabel添加到RootViewController的UIView
+
     [self.view addSubview:[self createWelcomeLabel]];
     [self.view addSubview:[self createGoToNextViewButton]];
 
-        // Do any additional setup after loading the view, typically from a nib.
+
 }
 
 -(UIButton *) createGoToNextViewButton{
@@ -46,12 +46,12 @@
 }
 -(UILabel *)createWelcomeLabel{
     
-    //初始化UILabel,设置其大小为窗口大小
+
     
     UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     welcomeLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin;
     
-    //设置welcomeLabel中文字的位置、内容、颜色、字体
+
     welcomeLabel.textAlignment = NSTextAlignmentCenter;
     welcomeLabel.text = @"Welcome to WeChat";
     welcomeLabel.textColor = [UIColor blackColor];
