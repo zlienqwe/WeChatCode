@@ -11,8 +11,8 @@
 @interface CircleTableViewCell()
 
 @property (nonatomic, strong) UILabel * contentText;
-@property (nonatomic, strong) UIImageView * contentImages;
-@property (nonatomic, strong) UILabel * contentReply;
+
+
 
 
 @end
@@ -30,15 +30,12 @@
         _contentText = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 230, 20)];
         [self.contentView addSubview:_contentText];
         
-        _contentReply = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 230, 20)];
-        [self.contentView addSubview:_contentReply];
     }
     return self;
 }
 
 - (void)config:(ContentModel *)model{
     self.contentText.text = model.contentText;
-    self.contentReply.text = model.contentReply;
 }
 
 

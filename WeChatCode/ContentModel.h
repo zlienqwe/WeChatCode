@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ContentModel : NSObject
+
 @property (strong, nonatomic) NSString * contentText;
-@property (strong, nonatomic) NSString * contentReply;
+
 @end

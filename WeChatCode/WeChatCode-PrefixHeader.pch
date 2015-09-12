@@ -1,0 +1,17 @@
+//
+//  WeChatCode-PrefixHeader.pch
+//  WeChatCode
+//
+//  Created by Zlien on 9/12/15.
+//  Copyright (c) 2015 Zlien. All rights reserved.
+//
+
+#ifndef WeChatCode_WeChatCode_PrefixHeader_pch
+#define WeChatCode_WeChatCode_PrefixHeader_pch
+#define UserInfoUrl @"http://thoughtworks-ios.herokuapp.com/user/jsmith"
+#define usernameFont [UIFont fontWithName:@"STHeitiSC-Medium" size:14]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif

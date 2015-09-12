@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UrlHelper : NSObject
--(void)requestNetWork;
--(NSMutableArray *)jsonToData:(NSDictionary *)dic;
+
+- (void)requestWith:(NSString *)urlString success:(void (^)(NSDictionary *))success failure:(void (^)())failure;
+
 @end

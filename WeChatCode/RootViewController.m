@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "CircleViewController.h"
+#import "UrlHelper.h"
 
 @interface RootViewController ()
 
@@ -18,16 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Main";
 
-
     [self.view addSubview:[self createWelcomeLabel]];
     [self.view addSubview:[self createGoToNextViewButton]];
-
-
 }
+
 
 -(UIButton *) createGoToNextViewButton{
     UIButton *goToNextViewButton = [UIButton buttonWithType:UIButtonTypeSystem];

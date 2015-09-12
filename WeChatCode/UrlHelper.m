@@ -11,26 +11,23 @@
 
 
 @implementation UrlHelper
-NSString *urlPath = @"http://thoughtworks-ios.herokuapp.com/user/jsmith/tweets";
 
--(void)requestNetWork{
+- (void)requestWith:(NSString *)urlString success:(void (^)(NSDictionary *))success failure:(void (^)())failure {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:urlPath parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
+     
+    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSLog(@"%@",responseObject);
+        
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            
+            NSDictionary *dic = responseObject;
+            success(dic);
+        }
     }failure:^(AFHTTPRequestOperation *operation, NSError *error){
-        NSLog(@"EEEEEEEEEEEEEEEE");
+        NSLog(@"error %@",error);
+        failure();
     }];
-
 }
 
--(NSMutableArray *)jsonToData:(NSDictionary *)dic{
-
-    
-    NSError *error = [NSError new];
-    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:dic];
-    NSMutableArray *jsonToDictionary = [NSJSONSerialization JSONObjectWithData:myData options:0 error:&error];
-
-    return [NSMutableArray arrayWithArray:jsonToDictionary];
-}
 
 @end
