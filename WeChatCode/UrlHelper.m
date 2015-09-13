@@ -1,4 +1,4 @@
-//
+
 //  UrlHelper.m
 //  WeChatCode
 //
@@ -12,12 +12,11 @@
 
 @implementation UrlHelper
 
-- (void)requestWith:(NSString *)urlString success:(void (^)(NSDictionary *))success failure:(void (^)())failure {
+- (void)requestHeaderViewInfo:(void (^)(NSDictionary *))success failure:(void (^)())failure {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
      
-    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
-        NSLog(@"%@",responseObject);
-        
+    [manager GET:UserInfoUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
+
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
             NSDictionary *dic = responseObject;
@@ -29,5 +28,21 @@
     }];
 }
 
+-(void)requestFeeds:(void (^)(NSArray *))success failure:(void (^)())failure{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager GET:ContentUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
+        
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            
+            NSArray *arr = responseObject;
+            success(arr);
+        }
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error){
+        NSLog(@"error %@",error);
+        failure();
+    }];
+}
 
 @end

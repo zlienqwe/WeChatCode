@@ -10,6 +10,7 @@
 
 @interface UrlHelper : NSObject
 
-- (void)requestWith:(NSString *)urlString success:(void (^)(NSDictionary *))success failure:(void (^)())failure;
+-(void)requestHeaderViewInfo:(void (^)(NSDictionary *))success failure:(void (^)())failure;
+-(void)requestFeeds:(void (^)(NSArray *))success failure:(void (^)())failure;
 
 @end

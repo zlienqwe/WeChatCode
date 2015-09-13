@@ -12,7 +12,7 @@
 		8A3C4A151BA2CE47002AE7FA /* UrlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C4A141BA2CE47002AE7FA /* UrlHelper.m */; };
 		8A6F24F01BA44AAA008DE120 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6F24EF1BA44AAA008DE120 /* Default-568h@2x.png */; };
 		8AA2C1BD1BA2A1CB001FEBFA /* CircleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */; };
-		8AA2C1C11BA2AACB001FEBFA /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1C01BA2AACB001FEBFA /* ContentModel.m */; };
+		8AA2C1C11BA2AACB001FEBFA /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1C01BA2AACB001FEBFA /* Feed.m */; };
 		8AACE4941BA02973000B0FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4931BA02973000B0FD4 /* main.m */; };
 		8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4961BA02973000B0FD4 /* AppDelegate.m */; };
 		8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4991BA02973000B0FD4 /* RootViewController.m */; };
@@ -43,8 +43,8 @@
 		8A6F24EF1BA44AAA008DE120 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../../Desktop/Default-568h@2x.png"; sourceTree = "<group>"; };
 		8AA2C1BB1BA2A1CB001FEBFA /* CircleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleTableViewCell.h; sourceTree = "<group>"; };
 		8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleTableViewCell.m; sourceTree = "<group>"; };
-		8AA2C1BF1BA2AACB001FEBFA /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
-		8AA2C1C01BA2AACB001FEBFA /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
+		8AA2C1BF1BA2AACB001FEBFA /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		8AA2C1C01BA2AACB001FEBFA /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		8AACE48E1BA02973000B0FD4 /* WeChatCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACE4921BA02973000B0FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AACE4931BA02973000B0FD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		8AA2C1C21BA2AC27001FEBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2C1BF1BA2AACB001FEBFA /* ContentModel.h */,
-				8AA2C1C01BA2AACB001FEBFA /* ContentModel.m */,
+				8AA2C1BF1BA2AACB001FEBFA /* Feed.h */,
+				8AA2C1C01BA2AACB001FEBFA /* Feed.m */,
 				8ACD7CBE1BA3D9B000FD2948 /* User.h */,
 				8ACD7CBF1BA3D9B000FD2948 /* User.m */,
 			);
@@ -363,7 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */,
-				8AA2C1C11BA2AACB001FEBFA /* ContentModel.m in Sources */,
+				8AA2C1C11BA2AACB001FEBFA /* Feed.m in Sources */,
 				8A3C4A151BA2CE47002AE7FA /* UrlHelper.m in Sources */,
 				8ACD7CBD1BA3D98E00FD2948 /* HeaderView.m in Sources */,
 				8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */,

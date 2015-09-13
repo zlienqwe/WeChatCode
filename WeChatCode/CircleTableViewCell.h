@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContentModel.h"
+#import "Feed.h"
 
 @interface CircleTableViewCell : UITableViewCell
-- (void)config:(ContentModel *)model;
+
+- (void)config:(Feed *)feed;
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier feed:(Feed *)feed;
+
 @end

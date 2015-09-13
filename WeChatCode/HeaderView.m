@@ -48,12 +48,14 @@ static NSInteger backgroungImageViewHeight = 180;
     return backgroudImageView;
 }
 
+
+
 -(UIImageView *)buildAvatarViewWithUrl:(NSString *)urlString{
     
     UIImageView *avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width - padding - avatarWidth, backgroungImageViewHeight - 40, avatarWidth , avatarHeight)];
     UIImage *aimage = [self requestImageWith:urlString];
     [avatarImageView setImage:aimage];
-    
+
     return avatarImageView;
 }
 
@@ -65,5 +67,6 @@ static NSInteger backgroungImageViewHeight = 180;
     
     return aimage;
 }
+
 
 @end
