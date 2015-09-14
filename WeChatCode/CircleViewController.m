@@ -11,6 +11,7 @@
 #import "CircleTableViewCell.h"
 #import "UrlHelper.h"
 #import "HeaderView.h"
+#import "UIImageView+WebCache.h"
 
 @interface CircleViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *feedArray;
@@ -31,7 +32,6 @@
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate=self;
-    
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
@@ -53,8 +53,8 @@
             Feed *feed = [[Feed alloc] initWithDic:dic];
             
             [self.feedArray addObject:feed];
-            [self.tableView reloadData];
         }
+        [self.tableView reloadData];
     } failure:^{
         NSLog(@"content connect error");
     }];
@@ -66,7 +66,6 @@
     [urlHelper requestHeaderViewInfo:^(NSDictionary *dic) {
         HeaderView *headerView = [[HeaderView alloc] initWithDic:dic frame:CGRectMake(0, 0, self.view.frame.size.width, 220)];
         self.tableView.tableHeaderView = headerView;
-        
     } failure:^{
         NSLog(@"headerView connect error");
     }];
@@ -78,7 +77,7 @@
     CircleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   
         if (cell == nil) {
-        cell = [[CircleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier feed:self.  feedArray[indexPath.row]];
+        cell = [[CircleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier feed:self.feedArray[indexPath.row]];
     }
 
     return cell;

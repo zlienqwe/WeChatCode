@@ -11,7 +11,7 @@
 
 @interface HeaderView : UIView
 
-@property (nonatomic, strong) UIImageView *backgroudImageView;
+@property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UILabel *nickLabel;
 

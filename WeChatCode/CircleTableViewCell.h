@@ -11,7 +11,6 @@
 
 @interface CircleTableViewCell : UITableViewCell
 
-- (void)config:(Feed *)feed;
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier feed:(Feed *)feed;
 
 @end

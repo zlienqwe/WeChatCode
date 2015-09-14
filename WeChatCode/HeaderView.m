@@ -8,6 +8,8 @@
 
 #import "HeaderView.h"
 #import "UrlHelper.h"
+#import "UIImageView+WebCache.h"
+
 static NSInteger padding = 10;
 static NSInteger avatarHeight = 60;
 static NSInteger avatarWidth = 60;
@@ -16,11 +18,12 @@ static NSInteger backgroungImageViewHeight = 180;
  
 -(id)initWithDic:(NSDictionary *)dic frame:(CGRect)frame{
     self = [self initWithFrame:frame];
-    
+
     if (self) {
-        self.backgroudImageView = [self buildBackgroundImageViewWithUrl:[dic objectForKey:@"profile-image"]];
-        [self addSubview:self.backgroudImageView ];
-        self.avatarImageView = [self buildAvatarViewWithUrl:[dic objectForKey:@"avatar"]];
+ 
+        self.backgroundImageView = [self buildBackgroundImageViewWithDic:dic];
+        [self addSubview:self.backgroundImageView];
+        self.avatarImageView = [self buildAvatarViewWithDic:dic];
         [self addSubview:self.avatarImageView];
         self.nickLabel = [self buildNickLabelWith:dic];
         [self addSubview:self.nickLabel];
@@ -39,34 +42,25 @@ static NSInteger backgroungImageViewHeight = 180;
     return nickLabel;
 }
 
--(UIImageView *)buildBackgroundImageViewWithUrl:(NSString *)urlString{
+-(UIImageView *)buildBackgroundImageViewWithDic:(NSDictionary *)dic{
     
-    UIImageView *backgroudImageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, backgroungImageViewHeight)];
-    UIImage *aimage = [self requestImageWith:urlString];
-    [backgroudImageView setImage:aimage];
+    UIImageView *backgroundImageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, backgroungImageViewHeight)];
     
-    return backgroudImageView;
+    [backgroundImageView sd_setImageWithURL:[dic objectForKey:@"profile-image"] placeholderImage:[UIImage imageNamed:@"backgroundplaceholder"]];
+
+    
+    return backgroundImageView;
 }
 
 
 
--(UIImageView *)buildAvatarViewWithUrl:(NSString *)urlString{
+-(UIImageView *)buildAvatarViewWithDic:(NSDictionary *)dic{
     
     UIImageView *avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width - padding - avatarWidth, backgroungImageViewHeight - 40, avatarWidth , avatarHeight)];
-    UIImage *aimage = [self requestImageWith:urlString];
-    [avatarImageView setImage:aimage];
-
+    [avatarImageView sd_setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"avatar"]] placeholderImage:[UIImage imageNamed:@"avatarplaceholder"]];
     return avatarImageView;
 }
 
--(UIImage *)requestImageWith:(NSString *)urlString{
-    
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *aimage = [[UIImage alloc] initWithData:data];
-    
-    return aimage;
-}
 
 
 @end

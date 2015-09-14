@@ -27,7 +27,7 @@
         failure();
     }];
 }
-
+    
 -(void)requestFeeds:(void (^)(NSArray *))success failure:(void (^)())failure{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -35,9 +35,7 @@
     [manager GET:ContentUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
         
         if ([responseObject isKindOfClass:[NSArray class]]) {
-            
-            NSArray *arr = responseObject;
-            success(arr);
+            success(responseObject);
         }
     }failure:^(AFHTTPRequestOperation *operation, NSError *error){
         NSLog(@"error %@",error);

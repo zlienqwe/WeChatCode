@@ -8,11 +8,9 @@
 
 #ifndef WeChatCode_WeChatCode_PrefixHeader_pch
 #define WeChatCode_WeChatCode_PrefixHeader_pch
+
 #define UserInfoUrl @"http://thoughtworks-ios.herokuapp.com/user/jsmith"
 #define ContentUrl @"http://thoughtworks-ios.herokuapp.com/user/jsmith/tweets"
 #define usernameFont [UIFont fontWithName:@"STHeitiSC-Medium" size:14]
-
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #endif

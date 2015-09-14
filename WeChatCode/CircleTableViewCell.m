@@ -8,6 +8,8 @@
 
 #import "CircleTableViewCell.h"
 #import "Feed.h"
+#import "UIImageView+WebCache.h"
+
 static NSInteger avatarHeight = 60;
 static NSInteger avatarWidth = 60;
 
@@ -38,36 +40,21 @@ static NSInteger avatarWidth = 60;
         [self.contentView addSubview:_senderName];
         
         _avatar = [[UIImageView alloc] init];
-        _avatar = [self buildAvatarViewWithUrl:feed.avatarString];
+        _avatar = [self buildAvatarViewWithUrl:feed];
         [self.contentView addSubview:_avatar];
         
     }
     return self;
 }
--(UIImageView *)buildAvatarViewWithUrl:(NSString *)urlString{
+-(UIImageView *)buildAvatarViewWithUrl:(Feed *)feed{
     
     UIImageView *avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, avatarWidth , avatarHeight)];
-    UIImage *aimage = [self requestImageWith:urlString];
-    [avatarImageView setImage:aimage];
+    [avatarImageView sd_setImageWithURL:(NSURL *)(feed.avatarString) placeholderImage:[UIImage imageNamed:@"avatarplaceholder"]];
+    
+
+
     
     return avatarImageView;
 }
-
--(UIImage *)requestImageWith:(NSString *)urlString{
-    
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *aimage = [[UIImage alloc] initWithData:data];
-    
-    return aimage;
-}
-
-
-
-
-- (void)config:(Feed *)feed{
-    self.content.text = feed.content;
-}
-
 
 @end
