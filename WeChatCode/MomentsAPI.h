@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UrlHelper : NSObject
+@interface MomentsAPI : NSObject
 
--(void)requestHeaderViewInfo:(void (^)(NSDictionary *))success failure:(void (^)())failure;
--(void)requestFeeds:(void (^)(NSArray *))success failure:(void (^)())failure;
++ (void)requestHeaderViewInfo:(void (^)(NSDictionary *))success failure:(void (^)())failure;
++ (void)requestFeeds:(void (^)())success failure:(void (^)())failure;
 
 @end

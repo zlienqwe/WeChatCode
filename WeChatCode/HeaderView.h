@@ -7,14 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
 
 @interface HeaderView : UIView
 
-@property (nonatomic, strong) UIImageView *backgroundImageView;
-@property (nonatomic, strong) UIImageView *avatarImageView;
-@property (nonatomic, strong) UILabel *nickLabel;
-
--(id)initWithDic:(NSDictionary *)dic frame:(CGRect)frame;
+- (id)initWithDic:(NSDictionary *)dic frame:(CGRect)frame;
 
 @end
