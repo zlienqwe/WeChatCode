@@ -10,16 +10,16 @@
 
 @implementation Feed
 
--(instancetype)initWithDic:(NSDictionary *)dic{
-    self = [self init];
-
-    if (self) {
-        self.content = [dic objectForKey:@"content"];
-        self.senderName = [[dic objectForKey:@"sender"] objectForKey:@"username"];
-        self.avatarString = [[dic objectForKey:@"sender"] objectForKey:@"avatar"];
-        self.nick = [[dic objectForKey:@"sender"] objectForKey:@"nick"];
+- (instancetype)initWithDic:(NSDictionary *)dic {
+    if ([self init]) {
+        NSDictionary *tempDic = dic[@"sender"];
+        
+        self.content = dic[@"content"];
+        self.senderName = tempDic[@"username"];
+        self.avatarString = tempDic[@"avatar"];
+        self.nick = tempDic[@"nick"];
     }
     return self;
 }
 
-@end
+@end 

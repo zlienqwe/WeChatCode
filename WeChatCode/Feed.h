@@ -10,11 +10,11 @@
 
 @interface Feed : NSObject
 
-@property (strong, nonatomic) NSString * content;
-@property (strong, nonatomic) NSString * senderName;
-@property (strong, nonatomic) NSString * nick;
-@property (strong, nonatomic) NSString * avatarString;
+@property (strong, nonatomic) NSString *content;
+@property (strong, nonatomic) NSString *senderName;
+@property (strong, nonatomic) NSString *nick;
+@property (strong, nonatomic) NSString *avatarString;
 
--(instancetype)initWithDic:(NSDictionary *)dic;
+- (instancetype)initWithDic:(NSDictionary *)dic;
 
 @end
