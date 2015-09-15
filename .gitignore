@@ -75,4 +75,4 @@ Carthage/Build
 
 ### Objective-C Patch ###
 *.xcscmblueprint
-
+.idea/
