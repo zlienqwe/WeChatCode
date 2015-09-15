@@ -8,14 +8,16 @@
 
 #import "MomentsAPI.h"
 #import "AFNetworking.h"
+#import "User.h"
 
 @implementation MomentsAPI
 
-+ (void)requestHeaderViewInfo:(void (^)(NSDictionary *))success failure:(void (^)())failure {
++ (void)requestHeaderViewInfo:(void (^)(User *user))success failure:(void (^)())failure {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:UserInfoUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            success(responseObject);
+            User *user = [[User alloc] initWithDic:responseObject];
+            success(user);
         }
     }failure:^(AFHTTPRequestOperation *operation, NSError *error){
         NSLog(@"error %@",error);

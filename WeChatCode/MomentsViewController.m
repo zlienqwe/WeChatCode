@@ -28,6 +28,10 @@
     [self createHeaderView];
     [self loadingMomentsFeed];
     self.title = @"朋友圈";
+    [self createTableView];
+}
+
+- (void)createTableView {
     CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -55,8 +59,8 @@
 }
 
 - (void)createHeaderView {
-    [MomentsAPI requestHeaderViewInfo:^(NSDictionary *dic) {
-        HeaderView *headerView = [[HeaderView alloc] initWithDic:dic frame:CGRectZero];
+    [MomentsAPI requestHeaderViewInfo:^(User *user) {
+        HeaderView *headerView = [[HeaderView alloc] initWithUser:user frame:CGRectZero];
         self.tableView.tableHeaderView = headerView;
     } failure:^{
         NSLog(@"headerView connect error");
@@ -67,7 +71,7 @@
 #pragma mark - table view delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.feedArray count];
+    return self.feedArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

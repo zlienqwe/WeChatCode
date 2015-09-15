@@ -14,4 +14,6 @@
 @property (strong, nonatomic) NSString *avatar;
 @property (strong, nonatomic) NSString *profileImage;
 
+- (User *)initWithDic:(NSDictionary *)dic;
+
 @end

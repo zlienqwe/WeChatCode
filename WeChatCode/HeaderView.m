@@ -8,6 +8,7 @@
 
 #import "HeaderView.h"
 #import "UIImageView+WebCache.h"
+#import "User.h"
 
 static NSUInteger padding = 10;
 static NSUInteger avatarHeight = 60;
@@ -24,33 +25,34 @@ static NSUInteger headerViewFrame = 200;
 
 @implementation HeaderView
  
-- (id)initWithDic:(NSDictionary *)dic frame:(CGRect)frame {
+- (id)initWithUser:(User *)user frame:(CGRect)frame {
     if ([self initWithFrame:frame]) {
-        [self createBackgroundImageViewWithURLString:dic[@"profile-image"]];
-        [self createNickLabelWithString:dic[@"nike"]];
-        [self createAvatarViewWithURLString:dic[@"avatar"]];
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
+
+        [self createBackgroundImageViewWithURLString:user.profileImage];
+        [self createNickLabelWithString:user.nick];
+        [self createAvatarViewWithURLString:user.avatar];
     }
     return self;
 }
 
 - (void)createBackgroundImageViewWithURLString:(NSString *)string {
-    UIImageView *backgroundImageView =[[UIImageView alloc] init];
-    [backgroundImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"backgroundplaceholder"]];
+    self.backgroundImageView =[[UIImageView alloc] init];
+    [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"backgroundplaceholder"]];
     [self addSubview:self.backgroundImageView];
 }
 
 - (void)createNickLabelWithString:(NSString *)string {
-    UILabel *nickLabel = [[UILabel alloc] init];
-    nickLabel.text = string;
-    nickLabel.textColor = [UIColor blackColor];
-    nickLabel.font = [UIFont systemFontOfSize:14];
+    self.nickLabel = [[UILabel alloc] init];
+    self.nickLabel.text = string;
+    self.nickLabel.textColor = [UIColor blackColor];
+    self.nickLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:self.nickLabel];
 }
 
 - (void)createAvatarViewWithURLString:(NSString *)string {
-    UIImageView *avatarImageView = [[UIImageView alloc] init] ;
-    [avatarImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"avatarplaceholder"]];
+    self.avatarImageView = [[UIImageView alloc] init] ;
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"avatarplaceholder"]];
     [self addSubview:self.avatarImageView];
 }
 

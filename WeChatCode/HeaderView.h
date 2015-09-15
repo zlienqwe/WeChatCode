@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User;
 
 @interface HeaderView : UIView
 
-- (id)initWithDic:(NSDictionary *)dic frame:(CGRect)frame;
+- (id)initWithUser:(User *)user frame:(CGRect)frame;
 
 @end

@@ -10,4 +10,11 @@
 
 @implementation User
 
+- (User *)initWithDic:(NSDictionary *)dic {
+    self.nick = dic[@"nick"];
+    self.avatar = dic[@"avatar"];
+    self.profileImage = dic[@"profile-image"];
+    return self;
+}
+
 @end

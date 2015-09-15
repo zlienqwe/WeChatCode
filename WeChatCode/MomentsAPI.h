@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class User;
 
 @interface MomentsAPI : NSObject
 
-+ (void)requestHeaderViewInfo:(void (^)(NSDictionary *))success failure:(void (^)())failure;
++ (void)requestHeaderViewInfo:(void (^)(User *user))success failure:(void (^)())failure;
 + (void)requestFeeds:(void (^)())success failure:(void (^)())failure;
 
 @end
