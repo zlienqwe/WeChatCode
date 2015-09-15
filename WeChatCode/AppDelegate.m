@@ -16,22 +16,20 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    HomeViewController *rootViewController = [[HomeViewController alloc] init];
     
+    HomeViewController *rootViewController = [[HomeViewController alloc] init];
+    [application setStatusBarHidden:NO];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-    [navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:(0/225.0) green:(0/225.0) blue:(0/225.0) alpha:1.0]];
+    [navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
     [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [navigationController.navigationBar setTranslucent:NO];
     [navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     self.window.rootViewController = navigationController;
-
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
