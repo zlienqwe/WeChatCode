@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3CE9D79F44C4B209812A3299 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F4A0EFDDEAFBCA96CAC361 /* libPods.a */; };
 		8A110BB41BA5B2D3007E4D1B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A110BB31BA5B2D3007E4D1B /* Default-568h@2x.png */; };
-		8A1ABB311BA15C83009998A4 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ABB301BA15C83009998A4 /* CircleViewController.m */; };
+		8A1ABB311BA15C83009998A4 /* MomentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ABB301BA15C83009998A4 /* MomentsViewController.m */; };
 		8A3C4A151BA2CE47002AE7FA /* MomentsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C4A141BA2CE47002AE7FA /* MomentsAPI.m */; };
 		8A8AE34E1BA696B100EA1B26 /* avatarplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AE34D1BA696B100EA1B26 /* avatarplaceholder.png */; };
 		8A8AE3501BA696E200EA1B26 /* backgroundplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AE34F1BA696E200EA1B26 /* backgroundplaceholder.png */; };
@@ -17,7 +17,7 @@
 		8AA2C1C11BA2AACB001FEBFA /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1C01BA2AACB001FEBFA /* Feed.m */; };
 		8AACE4941BA02973000B0FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4931BA02973000B0FD4 /* main.m */; };
 		8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4961BA02973000B0FD4 /* AppDelegate.m */; };
-		8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4991BA02973000B0FD4 /* RootViewController.m */; };
+		8AACE49A1BA02973000B0FD4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4991BA02973000B0FD4 /* HomeViewController.m */; };
 		8AACE49F1BA02973000B0FD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AACE49E1BA02973000B0FD4 /* Images.xcassets */; };
 		8AACE4AE1BA02973000B0FD4 /* WeChatCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4AD1BA02973000B0FD4 /* WeChatCodeTests.m */; };
 		8ACD7CBD1BA3D98E00FD2948 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACD7CBC1BA3D98E00FD2948 /* HeaderView.m */; };
@@ -38,8 +38,8 @@
 		02F4A0EFDDEAFBCA96CAC361 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB3F4EB5181BEA17ED737F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8A110BB31BA5B2D3007E4D1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8A1ABB2F1BA15C83009998A4 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
-		8A1ABB301BA15C83009998A4 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
+		8A1ABB2F1BA15C83009998A4 /* MomentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsViewController.h; sourceTree = "<group>"; };
+		8A1ABB301BA15C83009998A4 /* MomentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewController.m; sourceTree = "<group>"; };
 		8A3C4A131BA2CE47002AE7FA /* MomentsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsAPI.h; sourceTree = "<group>"; };
 		8A3C4A141BA2CE47002AE7FA /* MomentsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsAPI.m; sourceTree = "<group>"; };
 		8A6F24EC1BA42D11008DE120 /* WeChatCode-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeChatCode-PrefixHeader.pch"; sourceTree = "<group>"; };
@@ -54,8 +54,8 @@
 		8AACE4931BA02973000B0FD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AACE4951BA02973000B0FD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AACE4961BA02973000B0FD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8AACE4981BA02973000B0FD4 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		8AACE4991BA02973000B0FD4 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		8AACE4981BA02973000B0FD4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		8AACE4991BA02973000B0FD4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		8AACE49E1BA02973000B0FD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8AACE4A71BA02973000B0FD4 /* WeChatCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeChatCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACE4AC1BA02973000B0FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,12 +95,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8A1ABB0F1BA10B0A009998A4 /* Root */ = {
+		8A1ABB0F1BA10B0A009998A4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				8AACE4B71BA0297A000B0FD4 /* Controller */,
 			);
-			name = Root;
+			name = Home;
 			sourceTree = "<group>";
 		};
 		8A1ABB291BA14EDB009998A4 /* FriendsOfCircle */ = {
@@ -116,8 +116,8 @@
 		8A1ABB2A1BA14EF8009998A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8A1ABB2F1BA15C83009998A4 /* CircleViewController.h */,
-				8A1ABB301BA15C83009998A4 /* CircleViewController.m */,
+				8A1ABB2F1BA15C83009998A4 /* MomentsViewController.h */,
+				8A1ABB301BA15C83009998A4 /* MomentsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			children = (
 				8A3C4A121BA2CE2C002AE7FA /* API */,
 				8A1ABB291BA14EDB009998A4 /* FriendsOfCircle */,
-				8A1ABB0F1BA10B0A009998A4 /* Root */,
+				8A1ABB0F1BA10B0A009998A4 /* Home */,
 				8AACE4951BA02973000B0FD4 /* AppDelegate.h */,
 				8AACE4961BA02973000B0FD4 /* AppDelegate.m */,
 				8AACE49E1BA02973000B0FD4 /* Images.xcassets */,
@@ -228,8 +228,8 @@
 		8AACE4B71BA0297A000B0FD4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8AACE4981BA02973000B0FD4 /* RootViewController.h */,
-				8AACE4991BA02973000B0FD4 /* RootViewController.m */,
+				8AACE4981BA02973000B0FD4 /* HomeViewController.h */,
+				8AACE4991BA02973000B0FD4 /* HomeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -393,12 +393,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AACE49A1BA02973000B0FD4 /* RootViewController.m in Sources */,
+				8AACE49A1BA02973000B0FD4 /* HomeViewController.m in Sources */,
 				8AA2C1C11BA2AACB001FEBFA /* Feed.m in Sources */,
 				8A3C4A151BA2CE47002AE7FA /* MomentsAPI.m in Sources */,
 				8ACD7CBD1BA3D98E00FD2948 /* HeaderView.m in Sources */,
 				8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */,
-				8A1ABB311BA15C83009998A4 /* CircleViewController.m in Sources */,
+				8A1ABB311BA15C83009998A4 /* MomentsViewController.m in Sources */,
 				8AACE4941BA02973000B0FD4 /* main.m in Sources */,
 				8AA2C1BD1BA2A1CB001FEBFA /* MomentsTableViewCell.m in Sources */,
 				8ACD7CC01BA3D9B000FD2948 /* User.m in Sources */,

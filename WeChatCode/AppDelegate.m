@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RootViewController.h"
+#import "HomeViewController.h"
 
 
 @interface AppDelegate ()
@@ -20,11 +20,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RootViewController *rootViewController = [[RootViewController alloc] init];
+    HomeViewController *rootViewController = [[HomeViewController alloc] init];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     [navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:(0/225.0) green:(0/225.0) blue:(0/225.0) alpha:1.0]];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [navigationController.navigationBar setTranslucent:NO];
     [navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     self.window.rootViewController = navigationController;

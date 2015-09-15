@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CircleViewController : UIViewController
-
-@property(nonatomic) UITableView *tableView;
+@interface MomentsViewController : UIViewController
 
 @end
