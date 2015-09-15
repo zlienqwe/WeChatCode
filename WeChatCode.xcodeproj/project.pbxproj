@@ -13,7 +13,7 @@
 		8A3C4A151BA2CE47002AE7FA /* MomentsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C4A141BA2CE47002AE7FA /* MomentsAPI.m */; };
 		8A8AE34E1BA696B100EA1B26 /* avatarplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AE34D1BA696B100EA1B26 /* avatarplaceholder.png */; };
 		8A8AE3501BA696E200EA1B26 /* backgroundplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AE34F1BA696E200EA1B26 /* backgroundplaceholder.png */; };
-		8AA2C1BD1BA2A1CB001FEBFA /* CircleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */; };
+		8AA2C1BD1BA2A1CB001FEBFA /* MomentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1BC1BA2A1CB001FEBFA /* MomentsTableViewCell.m */; };
 		8AA2C1C11BA2AACB001FEBFA /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1C01BA2AACB001FEBFA /* Feed.m */; };
 		8AACE4941BA02973000B0FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4931BA02973000B0FD4 /* main.m */; };
 		8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4961BA02973000B0FD4 /* AppDelegate.m */; };
@@ -45,8 +45,8 @@
 		8A6F24EC1BA42D11008DE120 /* WeChatCode-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeChatCode-PrefixHeader.pch"; sourceTree = "<group>"; };
 		8A8AE34D1BA696B100EA1B26 /* avatarplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarplaceholder.png; sourceTree = "<group>"; };
 		8A8AE34F1BA696E200EA1B26 /* backgroundplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundplaceholder.png; sourceTree = "<group>"; };
-		8AA2C1BB1BA2A1CB001FEBFA /* CircleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleTableViewCell.h; sourceTree = "<group>"; };
-		8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleTableViewCell.m; sourceTree = "<group>"; };
+		8AA2C1BB1BA2A1CB001FEBFA /* MomentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsTableViewCell.h; sourceTree = "<group>"; };
+		8AA2C1BC1BA2A1CB001FEBFA /* MomentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsTableViewCell.m; sourceTree = "<group>"; };
 		8AA2C1BF1BA2AACB001FEBFA /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		8AA2C1C01BA2AACB001FEBFA /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		8AACE48E1BA02973000B0FD4 /* WeChatCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,8 +133,8 @@
 		8AA2C1BE1BA2A1D2001FEBFA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2C1BB1BA2A1CB001FEBFA /* CircleTableViewCell.h */,
-				8AA2C1BC1BA2A1CB001FEBFA /* CircleTableViewCell.m */,
+				8AA2C1BB1BA2A1CB001FEBFA /* MomentsTableViewCell.h */,
+				8AA2C1BC1BA2A1CB001FEBFA /* MomentsTableViewCell.m */,
 				8ACD7CBB1BA3D98E00FD2948 /* HeaderView.h */,
 				8ACD7CBC1BA3D98E00FD2948 /* HeaderView.m */,
 			);
@@ -400,7 +400,7 @@
 				8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */,
 				8A1ABB311BA15C83009998A4 /* CircleViewController.m in Sources */,
 				8AACE4941BA02973000B0FD4 /* main.m in Sources */,
-				8AA2C1BD1BA2A1CB001FEBFA /* CircleTableViewCell.m in Sources */,
+				8AA2C1BD1BA2A1CB001FEBFA /* MomentsTableViewCell.m in Sources */,
 				8ACD7CC01BA3D9B000FD2948 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
