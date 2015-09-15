@@ -10,8 +10,8 @@
 
 @interface User : NSObject
 
-@property (strong, nonatomic) NSString * nick;
-@property (strong, nonatomic) NSString * avatar;
-@property (strong, nonatomic) NSString * profileImage;
+@property (strong, nonatomic) NSString *nick;
+@property (strong, nonatomic) NSString *avatar;
+@property (strong, nonatomic) NSString *profileImage;
 
 @end
