@@ -12,11 +12,12 @@
 #import "MomentsAPI.h"
 #import "HeaderView.h"
 #import "UIImageView+WebCache.h"
-
+static NSString *cellIdentifier = @"cell";
 @interface MomentsViewController()<UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong) NSMutableArray *feedArray;
-@property(nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *feedArray;
+@property (nonatomic, strong) NSMutableArray *frameArray;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -25,24 +26,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBar];
-    [self createHeaderView];
+    [self createTableView];
+    [self loadingHeaderView];
     [self loadingMomentsFeed];
     self.title = @"朋友圈";
-    [self createTableView];
-}
-
-- (void)createTableView {
-    CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
-    [self.view addSubview:self.tableView];
-    self.tableView.dataSource = self;
-    self.tableView.delegate=self;
-    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)setNavigationBar {
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:nil];
     self.navigationItem.rightBarButtonItem = cameraButton;
+}
+
+- (void) loadingHeaderView {
+    [MomentsAPI requestHeaderViewInfo:^(User *user) {
+        HeaderView *headerView = [[HeaderView alloc] initWithUser:user frame:CGRectMake(0, 0, self.view.frame.size.width, 220)];
+        self.tableView.tableHeaderView = headerView;
+    } failure:^{
+        NSLog(@"headerView connect error %s", __func__);
+    }];
 }
 
 - (void)loadingMomentsFeed {
@@ -51,20 +52,21 @@
         for (NSDictionary *dic in responseObject) {
             Feed *feed = [[Feed alloc] initWithDic:dic];
             [self.feedArray addObject:feed];
+            _frameArray = [FeedFrame frameModelWithArray:_feedArray];
         }
         [self.tableView reloadData];
     } failure:^{
-        NSLog(@"content connect error");
+        NSLog(@"content connect error %s", __func__);
     }];
 }
 
-- (void)createHeaderView {
-    [MomentsAPI requestHeaderViewInfo:^(User *user) {
-        HeaderView *headerView = [[HeaderView alloc] initWithUser:user frame:CGRectZero];
-        self.tableView.tableHeaderView = headerView;
-    } failure:^{
-        NSLog(@"headerView connect error");
-    }];
+- (void)createTableView {
+    CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60);
+    self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+    [self.view addSubview:self.tableView];
+    self.tableView.dataSource = self;
+    self.tableView.delegate=self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 
@@ -75,17 +77,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = @"cell";
+    
     MomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
         cell = [[MomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         [cell createUIComponent:self.feedArray[indexPath.row]];
-    }
+        cell.feedFrame = [_frameArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    FeedFrame *fee = _frameArray[indexPath.row];
+    return fee.cellHeight;
 }
 
 @end
