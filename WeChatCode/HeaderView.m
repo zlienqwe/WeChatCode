@@ -13,7 +13,7 @@
 static NSUInteger padding = 10;
 static NSUInteger avatarHeight = 60;
 static NSUInteger avatarWidth = 60;
-static NSUInteger headerViewFrame = 200;
+static NSUInteger headerViewFrame = 180;
 
 @interface HeaderView ()
 
@@ -38,7 +38,7 @@ static NSUInteger headerViewFrame = 200;
 
 - (void)createBackgroundImageViewWithURLString:(NSString *)string {
     self.backgroundImageView =[[UIImageView alloc] init];
-    [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"backgroundplaceholder"]];
+    [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     [self addSubview:self.backgroundImageView];
 }
 
@@ -52,7 +52,7 @@ static NSUInteger headerViewFrame = 200;
 
 - (void)createAvatarViewWithURLString:(NSString *)string {
     self.avatarImageView = [[UIImageView alloc] init] ;
-    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"avatarplaceholder"]];
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     [self addSubview:self.avatarImageView];
 }
 
