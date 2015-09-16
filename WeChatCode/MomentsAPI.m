@@ -20,7 +20,7 @@
             success(user);
         }
     }failure:^(AFHTTPRequestOperation *operation, NSError *error){
-        NSLog(@"error %@",error);
+        NSLog(@"error %s",__func__);
         failure();
     }];
 }
@@ -32,7 +32,7 @@
             success(responseObject);
         }
     }failure:^(AFHTTPRequestOperation *operation, NSError *error){
-        NSLog(@"error %@",error);
+        NSLog(@"error %s",__func__);
         failure();
     }];
 }
