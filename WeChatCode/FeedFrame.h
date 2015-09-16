@@ -15,6 +15,9 @@
 @property (nonatomic, assign) CGRect avatarFrame;
 @property (nonatomic, assign) CGRect nickFrame;
 @property (nonatomic, assign) CGRect contentFrame;
+@property (nonatomic, assign) CGRect imageFrame;
+@property (nonatomic, assign) CGRect commentSenderNameFrame;
+@property (nonatomic, assign) CGRect commentTextFrame;
 
 @property (nonatomic, assign) CGFloat cellHeight;
 

@@ -11,9 +11,9 @@
 @implementation FeedFrame
 
 + (instancetype)frameModelWithModel:(Feed *)feed {
-    return [[self alloc] initWithModel:feed];
+    return [[self alloc] initWithFeed:feed];
 }
-
+   
 + (NSMutableArray *)frameModelWithArray:(NSMutableArray *)arr {
     NSMutableArray *data = [NSMutableArray array];
     for (Feed *fe in arr) {
@@ -23,7 +23,7 @@
     return data;
 }
 
-- (instancetype)initWithModel:(Feed*)feed {
+- (instancetype)initWithFeed:(Feed*)feed {
     if (self = [super init]) {
         self.feed = feed;
     }
@@ -37,7 +37,7 @@
         CGFloat avatarX = margin;
         CGFloat avatarY = margin;
         CGFloat avatarWH = 30;
-        self.nickFrame = CGRectMake(avatarX, avatarY, avatarWH, avatarWH);
+        self.avatarFrame = CGRectMake(avatarX, avatarY, avatarWH, avatarWH);
         
         CGFloat nickY = avatarY;
         CGFloat nickX = CGRectGetMaxX(self.avatarFrame) + margin;
@@ -45,16 +45,25 @@
         CGSize nickSize = [self.feed.nick sizeWithAttributes:nickAttrs];
         self.nickFrame = (CGRect){{nickX, nickY}, nickSize};
         
-        CGFloat contentX = avatarX;
+        CGFloat contentX = nickX;
         CGFloat contentY = CGRectGetMaxY(self.avatarFrame) + margin;
-        CGFloat contentW = [UIScreen mainScreen].bounds.size.width - 2 * contentX;
+        CGFloat contentW = [UIScreen mainScreen].bounds.size.width - margin - contentX;
         CGSize contentMaxSize = CGSizeMake(contentW, MAXFLOAT);
         NSDictionary *contentAttrs = @{NSFontAttributeName : [UIFont systemFontOfSize:14]};
-        CGFloat contentH = [
+        CGFloat contentH = [self.feed.content boundingRectWithSize:contentMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:contentAttrs context:nil].size.height;
+        self.contentFrame = CGRectMake(contentX, contentY, contentW, contentH);
         
-        
-        
-        
+        if (self.feed.imageString) {
+            CGFloat imageWH = 100;
+            CGFloat imageX = contentX;
+            CGFloat imageY = CGRectGetMaxY(self.contentFrame) + margin;
+            self.imageFrame = CGRectMake(imageX, imageY, imageWH, imageWH);
+            
+            _cellHeight = CGRectGetMaxY(self.imageFrame);
+        } else {
+            _cellHeight = CGRectGetMaxY(self.contentFrame);
+        }
+        _cellHeight += margin;
     }
     return _cellHeight;
 }
