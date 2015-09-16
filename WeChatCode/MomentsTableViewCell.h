@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeedFrame.h"
 @class Feed;
 
 @interface MomentsTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) FeedFrame *feedFrame;
 
 - (void)createUIComponent:(Feed *)feed;
 
