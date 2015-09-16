@@ -11,8 +11,8 @@
 		8A110BB41BA5B2D3007E4D1B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A110BB31BA5B2D3007E4D1B /* Default-568h@2x.png */; };
 		8A1ABB311BA15C83009998A4 /* MomentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1ABB301BA15C83009998A4 /* MomentsViewController.m */; };
 		8A3C4A151BA2CE47002AE7FA /* MomentsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C4A141BA2CE47002AE7FA /* MomentsAPI.m */; };
-		8A8AE34E1BA696B100EA1B26 /* avatarplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AE34D1BA696B100EA1B26 /* avatarplaceholder.png */; };
-		8A8AE3501BA696E200EA1B26 /* backgroundplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AE34F1BA696E200EA1B26 /* backgroundplaceholder.png */; };
+		8A6C54D91BA9118500D784AB /* FeedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C54D81BA9118500D784AB /* FeedFrame.m */; };
+		8A8AE3501BA696E200EA1B26 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8AE34F1BA696E200EA1B26 /* placeholder.png */; };
 		8AA2C1BD1BA2A1CB001FEBFA /* MomentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1BC1BA2A1CB001FEBFA /* MomentsTableViewCell.m */; };
 		8AA2C1C11BA2AACB001FEBFA /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2C1C01BA2AACB001FEBFA /* Feed.m */; };
 		8AACE4941BA02973000B0FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4931BA02973000B0FD4 /* main.m */; };
@@ -42,9 +42,10 @@
 		8A1ABB301BA15C83009998A4 /* MomentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewController.m; sourceTree = "<group>"; };
 		8A3C4A131BA2CE47002AE7FA /* MomentsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsAPI.h; sourceTree = "<group>"; };
 		8A3C4A141BA2CE47002AE7FA /* MomentsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsAPI.m; sourceTree = "<group>"; };
+		8A6C54D71BA9118500D784AB /* FeedFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedFrame.h; sourceTree = "<group>"; };
+		8A6C54D81BA9118500D784AB /* FeedFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedFrame.m; sourceTree = "<group>"; };
 		8A6F24EC1BA42D11008DE120 /* WeChatCode-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeChatCode-PrefixHeader.pch"; sourceTree = "<group>"; };
-		8A8AE34D1BA696B100EA1B26 /* avatarplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarplaceholder.png; sourceTree = "<group>"; };
-		8A8AE34F1BA696E200EA1B26 /* backgroundplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundplaceholder.png; sourceTree = "<group>"; };
+		8A8AE34F1BA696E200EA1B26 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		8AA2C1BB1BA2A1CB001FEBFA /* MomentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsTableViewCell.h; sourceTree = "<group>"; };
 		8AA2C1BC1BA2A1CB001FEBFA /* MomentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsTableViewCell.m; sourceTree = "<group>"; };
 		8AA2C1BF1BA2AACB001FEBFA /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
@@ -144,10 +145,12 @@
 		8AA2C1C21BA2AC27001FEBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2C1BF1BA2AACB001FEBFA /* Feed.h */,
-				8AA2C1C01BA2AACB001FEBFA /* Feed.m */,
 				8ACD7CBE1BA3D9B000FD2948 /* User.h */,
 				8ACD7CBF1BA3D9B000FD2948 /* User.m */,
+				8AA2C1BF1BA2AACB001FEBFA /* Feed.h */,
+				8AA2C1C01BA2AACB001FEBFA /* Feed.m */,
+				8A6C54D71BA9118500D784AB /* FeedFrame.h */,
+				8A6C54D81BA9118500D784AB /* FeedFrame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -198,8 +201,7 @@
 		8AACE4911BA02973000B0FD4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8A8AE34F1BA696E200EA1B26 /* backgroundplaceholder.png */,
-				8A8AE34D1BA696B100EA1B26 /* avatarplaceholder.png */,
+				8A8AE34F1BA696E200EA1B26 /* placeholder.png */,
 				8A110BB31BA5B2D3007E4D1B /* Default-568h@2x.png */,
 				8AACE4921BA02973000B0FD4 /* Info.plist */,
 				8AACE4931BA02973000B0FD4 /* main.m */,
@@ -325,10 +327,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A8AE34E1BA696B100EA1B26 /* avatarplaceholder.png in Resources */,
 				8AACE49F1BA02973000B0FD4 /* Images.xcassets in Resources */,
 				8A110BB41BA5B2D3007E4D1B /* Default-568h@2x.png in Resources */,
-				8A8AE3501BA696E200EA1B26 /* backgroundplaceholder.png in Resources */,
+				8A8AE3501BA696E200EA1B26 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +399,7 @@
 				8A3C4A151BA2CE47002AE7FA /* MomentsAPI.m in Sources */,
 				8ACD7CBD1BA3D98E00FD2948 /* HeaderView.m in Sources */,
 				8AACE4971BA02973000B0FD4 /* AppDelegate.m in Sources */,
+				8A6C54D91BA9118500D784AB /* FeedFrame.m in Sources */,
 				8A1ABB311BA15C83009998A4 /* MomentsViewController.m in Sources */,
 				8AACE4941BA02973000B0FD4 /* main.m in Sources */,
 				8AA2C1BD1BA2A1CB001FEBFA /* MomentsTableViewCell.m in Sources */,
