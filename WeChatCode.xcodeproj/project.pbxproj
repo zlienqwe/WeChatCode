@@ -22,6 +22,7 @@
 		8AACE4AE1BA02973000B0FD4 /* WeChatCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AACE4AD1BA02973000B0FD4 /* WeChatCodeTests.m */; };
 		8ACD7CBD1BA3D98E00FD2948 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACD7CBC1BA3D98E00FD2948 /* HeaderView.m */; };
 		8ACD7CC01BA3D9B000FD2948 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACD7CBF1BA3D9B000FD2948 /* User.m */; };
+		8AE225FC1BAA67120068B3E5 /* MomentsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE225FB1BAA67120068B3E5 /* MomentsViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		8ACD7CBC1BA3D98E00FD2948 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		8ACD7CBE1BA3D9B000FD2948 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		8ACD7CBF1BA3D9B000FD2948 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		8AE225FA1BAA67120068B3E5 /* MomentsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsViewModel.h; sourceTree = "<group>"; };
+		8AE225FB1BAA67120068B3E5 /* MomentsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewModel.m; sourceTree = "<group>"; };
 		F190514D8DD1E9C9ACC83BA5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +113,7 @@
 				8AA2C1C21BA2AC27001FEBFA /* Model */,
 				8AA2C1BE1BA2A1D2001FEBFA /* View */,
 				8A1ABB2A1BA14EF8009998A4 /* Controller */,
+				8AE225F61BAA64860068B3E5 /* ViewModel */,
 			);
 			name = FriendsOfCircle;
 			sourceTree = "<group>";
@@ -134,6 +138,8 @@
 		8AA2C1BE1BA2A1D2001FEBFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8A6C54D71BA9118500D784AB /* FeedFrame.h */,
+				8A6C54D81BA9118500D784AB /* FeedFrame.m */,
 				8AA2C1BB1BA2A1CB001FEBFA /* MomentsTableViewCell.h */,
 				8AA2C1BC1BA2A1CB001FEBFA /* MomentsTableViewCell.m */,
 				8ACD7CBB1BA3D98E00FD2948 /* HeaderView.h */,
@@ -149,8 +155,6 @@
 				8ACD7CBF1BA3D9B000FD2948 /* User.m */,
 				8AA2C1BF1BA2AACB001FEBFA /* Feed.h */,
 				8AA2C1C01BA2AACB001FEBFA /* Feed.m */,
-				8A6C54D71BA9118500D784AB /* FeedFrame.h */,
-				8A6C54D81BA9118500D784AB /* FeedFrame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -234,6 +238,15 @@
 				8AACE4991BA02973000B0FD4 /* HomeViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		8AE225F61BAA64860068B3E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AE225FA1BAA67120068B3E5 /* MomentsViewModel.h */,
+				8AE225FB1BAA67120068B3E5 /* MomentsViewModel.m */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		E9B3DF81BC1CCE6C68C8A2A7 /* Frameworks */ = {
@@ -404,6 +417,7 @@
 				8AACE4941BA02973000B0FD4 /* main.m in Sources */,
 				8AA2C1BD1BA2A1CB001FEBFA /* MomentsTableViewCell.m in Sources */,
 				8ACD7CC01BA3D9B000FD2948 /* User.m in Sources */,
+				8AE225FC1BAA67120068B3E5 /* MomentsViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

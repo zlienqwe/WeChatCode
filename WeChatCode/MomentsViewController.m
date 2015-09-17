@@ -7,6 +7,7 @@
 //
 
 #import "MomentsViewController.h"
+#import "MomentsViewModel.h"
 #import "Feed.h"
 #import "MomentsTableViewCell.h"
 #import "MomentsAPI.h"
@@ -18,6 +19,7 @@ static NSString *cellIdentifier = @"cell";
 @property (nonatomic, strong) NSMutableArray *feedArray;
 @property (nonatomic, strong) NSMutableArray *frameArray;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MomentsViewModel *momentViewModel;
 
 @end
 
@@ -27,9 +29,16 @@ static NSString *cellIdentifier = @"cell";
     [super viewDidLoad];
     [self setNavigationBar];
     [self createTableView];
-    [self loadingHeaderView];
+    [self createHeaderView];
     [self loadingMomentsFeed];
     self.title = @"朋友圈";
+}
+
+-(instancetype)init{
+    if ([super init]) {
+        self.momentViewModel = [[MomentsViewModel alloc] init];
+    }
+    return self;
 }
 
 - (void)setNavigationBar {
@@ -37,12 +46,11 @@ static NSString *cellIdentifier = @"cell";
     self.navigationItem.rightBarButtonItem = cameraButton;
 }
 
-- (void) loadingHeaderView {
-    [MomentsAPI requestHeaderViewInfo:^(User *user) {
-        HeaderView *headerView = [[HeaderView alloc] initWithUser:user frame:CGRectMake(0, 0, self.view.frame.size.width, 220)];
+- (void)createHeaderView {
+    [self.momentViewModel loadingHeaderView:^(HeaderView *headerView){
         self.tableView.tableHeaderView = headerView;
     } failure:^{
-        NSLog(@"headerView connect error %s", __func__);
+        NSLog(@"%s",__func__);
     }];
 }
 
