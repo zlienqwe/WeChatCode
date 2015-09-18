@@ -10,17 +10,17 @@
 
 @implementation FeedFrame
 
-+ (instancetype)frameModelWithModel:(Feed *)feed {
++ (instancetype)frameModelWithFeed:(Feed *)feed {
     return [[self alloc] initWithFeed:feed];
 }
    
-+ (NSMutableArray *)frameModelWithArray:(NSMutableArray *)arr {
-    NSMutableArray *data = [NSMutableArray array];
-    for (Feed *fe in arr) {
-        FeedFrame *newF =  [self frameModelWithModel:fe];
-        [data addObject:newF];
++ (NSMutableArray *)frameModelWithArray:(NSMutableArray *)feedArray {
+    NSMutableArray *feedFrameData = [NSMutableArray array];
+    for (Feed *feed in feedArray) {
+        FeedFrame *feedFrame = [self frameModelWithFeed:feed];
+        [feedFrameData addObject:feedFrame];
     }
-    return data;
+    return feedFrameData;
 }
 
 - (instancetype)initWithFeed:(Feed*)feed {
