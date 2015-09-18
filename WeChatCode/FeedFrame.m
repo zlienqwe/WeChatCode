@@ -14,7 +14,7 @@
     return [[self alloc] initWithFeed:feed];
 }
    
-+ (NSMutableArray *)frameModelWithArray:(NSMutableArray *)feedArray {
++ (NSMutableArray *)frameModelWithArray:(NSArray *)feedArray {
     NSMutableArray *feedFrameData = [NSMutableArray array];
     for (Feed *feed in feedArray) {
         FeedFrame *feedFrame = [self frameModelWithFeed:feed];

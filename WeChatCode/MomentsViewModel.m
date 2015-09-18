@@ -23,10 +23,10 @@
     }];
 }
 
-- (void)loadingMomentsFeed:(void (^)(NSMutableArray *frameArray))success failure:(void (^)())failure {
+- (void)loadingMomentsFeed:(void (^)(NSArray *frameArray))success failure:(void (^)())failure {
     NSMutableArray *feedArray = [[NSMutableArray alloc] init];
-    [MomentsAPI requestFeeds:^(NSMutableArray *responseObject){
-        NSMutableArray *frameArray = [[NSMutableArray alloc] init];
+    [MomentsAPI requestFeeds:^(NSArray *responseObject){
+        NSArray *frameArray = [[NSArray alloc] init];
         for (NSDictionary *moment in responseObject) {
             Feed *feed = [[Feed alloc] initWithDic:moment];
             [feedArray addObject:feed];

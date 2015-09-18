@@ -16,7 +16,7 @@
 static NSString *cellIdentifier = @"cell";
 @interface MomentsViewController()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *frameArray;
+@property (nonatomic, strong) NSArray *frameArray;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MomentsViewModel *momentsViewModel;
 
@@ -41,7 +41,7 @@ static NSString *cellIdentifier = @"cell";
 -(instancetype)init {
     if ([super init]) {
         self.momentsViewModel = [[MomentsViewModel alloc] init];
-        self.frameArray = [[NSMutableArray alloc] init];
+        self.frameArray = [[NSArray alloc] init];
     }
     return self;
 }
@@ -69,7 +69,7 @@ static NSString *cellIdentifier = @"cell";
 }
 
 - (void)createMomentsFeed {
-    [self.momentsViewModel loadingMomentsFeed:^(NSMutableArray *frameArray) {
+    [self.momentsViewModel loadingMomentsFeed:^(NSArray *frameArray) {
         self.frameArray = frameArray;
         [SVProgressHUD dismiss];
         [self.tableView reloadData];

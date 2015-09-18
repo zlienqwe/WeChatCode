@@ -13,6 +13,6 @@
 @interface MomentsViewModel : NSObject
 
 - (void)loadingHeaderView:(void (^)(HeaderView *headerView))success failure:(void (^)())failure;
-- (void)loadingMomentsFeed:(void (^)(NSMutableArray *frameArray))success failure:(void (^)())failure;
+- (void)loadingMomentsFeed:(void (^)(NSArray *frameArray))success failure:(void (^)())failure;
 
 @end

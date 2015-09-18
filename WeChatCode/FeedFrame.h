@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong) Feed *feed;
 
-+ (NSMutableArray*)frameModelWithArray:(NSMutableArray*)arr;
-+ (instancetype)frameModelWithFeed:(Feed*)feed;
++ (NSMutableArray *)frameModelWithArray:(NSArray *)feedArray;
++ (instancetype)frameModelWithFeed:(Feed *)feed;
 
 @end

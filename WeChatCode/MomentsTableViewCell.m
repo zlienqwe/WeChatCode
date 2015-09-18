@@ -15,7 +15,6 @@
 @property (nonatomic, strong) UILabel *senderName;
 @property (nonatomic, strong) UIImageView *avatar;
 @property (nonatomic, strong) UIImageView *image;
-@property (nonatomic, strong) UILabel *commentSenderName;
 
 @end
 

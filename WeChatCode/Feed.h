@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSString *nick;
 @property (strong, nonatomic) NSString *avatarString;
 @property (strong, nonatomic) NSString *content;
-@property (strong, nonatomic) NSMutableArray *imagesArray;
+@property (strong, nonatomic) NSArray *imagesArray;
 @property (strong, nonatomic) NSString *imageString;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
