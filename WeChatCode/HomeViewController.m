@@ -29,7 +29,7 @@
     btn.backgroundColor = [UIColor blackColor];
     [btn setTitle:@"朋友圈" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-    [btn addTarget:self action:@selector(pushMomentViewController) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(pushMomentsViewController) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 }
 
@@ -43,7 +43,7 @@
     [self.view addSubview:welcomeLabel];
 }
 
-- (void)pushMomentViewController {
+- (void)pushMomentsViewController {
     [self.navigationController pushViewController:[[MomentsViewController alloc] init] animated:YES];
 }
 

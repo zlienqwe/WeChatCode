@@ -10,9 +10,6 @@
 #import "Feed.h"
 #import "UIImageView+WebCache.h"
 
-//static NSUInteger avatarHeight = 60;
-//static NSUInteger avatarWidth = 60;
-
 @interface MomentsTableViewCell()
 
 @property (nonatomic, strong) UILabel *content;

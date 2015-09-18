@@ -34,7 +34,7 @@
         }
         success(frameArray);
     } failure:^{
-        NSLog(@"!!!!!!!");
+        NSLog(@"%s", __func__);
     }];
 }
 @end
