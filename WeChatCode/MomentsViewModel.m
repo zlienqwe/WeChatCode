@@ -9,6 +9,8 @@
 #import "MomentsViewModel.h"
 #import "MomentsAPI.h"
 #import "HeaderView.h"
+#import "FeedFrame.h"
+#import "Feed.h"
 
 @implementation MomentsViewModel
 
@@ -21,4 +23,18 @@
     }];
 }
 
+- (void)loadingMomentsFeed:(void (^)(NSMutableArray *frameArray))success failure:(void (^)())failure{
+    NSMutableArray *feedArray = [[NSMutableArray alloc] init];
+    [MomentsAPI requestFeeds:^(NSMutableArray *responseObject){
+        NSMutableArray *frameArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *moment in responseObject) {
+            Feed *feed = [[Feed alloc] initWithDic:moment];
+            [feedArray addObject:feed];
+            frameArray = [FeedFrame frameModelWithArray:feedArray];
+        }
+        success(frameArray);
+    } failure:^{
+        NSLog(@"!!!!!!!");
+    }];
+}
 @end

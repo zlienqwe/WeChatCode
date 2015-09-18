@@ -30,13 +30,14 @@ static NSString *cellIdentifier = @"cell";
     [self setNavigationBar];
     [self createTableView];
     [self createHeaderView];
-    [self loadingMomentsFeed];
+    [self createMomentsFeed];
     self.title = @"朋友圈";
 }
 
 -(instancetype)init{
     if ([super init]) {
         self.momentViewModel = [[MomentsViewModel alloc] init];
+        self.frameArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -46,56 +47,52 @@ static NSString *cellIdentifier = @"cell";
     self.navigationItem.rightBarButtonItem = cameraButton;
 }
 
+- (void)createTableView {
+    CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60);
+    self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+    self.tableView.dataSource = self;
+    self.tableView.delegate=self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    [self.view addSubview:self.tableView];
+}
+
 - (void)createHeaderView {
     [self.momentViewModel loadingHeaderView:^(HeaderView *headerView){
         self.tableView.tableHeaderView = headerView;
     } failure:^{
-        NSLog(@"%s",__func__);
+        NSLog(@"%s", __func__);
     }];
 }
 
-- (void)loadingMomentsFeed {
-    self.feedArray = [[NSMutableArray alloc] init];
-    [MomentsAPI requestFeeds:^(NSArray *responseObject) {
-        for (NSDictionary *dic in responseObject) {
-            Feed *feed = [[Feed alloc] initWithDic:dic];
-            [self.feedArray addObject:feed];
-            _frameArray = [FeedFrame frameModelWithArray:_feedArray];
-        }
+- (void)createMomentsFeed {
+    [self.momentViewModel loadingMomentsFeed:^(NSMutableArray *frameArray){
+        self.frameArray = frameArray;
         [self.tableView reloadData];
-    } failure:^{
-        NSLog(@"content connect error %s", __func__);
+    }failure:^{
+        NSLog(@"%s", __func__);
     }];
 }
 
-- (void)createTableView {
-    CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60);
-    self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
-    [self.view addSubview:self.tableView];
-    self.tableView.dataSource = self;
-    self.tableView.delegate=self;
-    self.tableView.tableFooterView = [[UIView alloc] init];
-}
 
 
 #pragma mark - table view delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.feedArray.count;
+    return self.frameArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     MomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        cell = [[MomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        [cell createUIComponent:self.feedArray[indexPath.row]];
-        cell.feedFrame = [_frameArray objectAtIndex:indexPath.row];
+    cell = [[MomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    FeedFrame *feedFrame = self.frameArray[indexPath.row];
+    [cell createUIComponent:feedFrame.feed];
+    cell.feedFrame = [self.frameArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FeedFrame *fee = _frameArray[indexPath.row];
-    return fee.cellHeight;
+    FeedFrame *feed = self.frameArray[indexPath.row];
+    return feed.cellHeight;
 }
 
 @end
