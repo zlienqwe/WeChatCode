@@ -12,6 +12,7 @@
 #import "MomentsAPI.h"
 #import "HeaderView.h"
 #import "UIImageView+WebCache.h"
+#import "SVProgressHUD.h"
 static NSString *cellIdentifier = @"cell";
 @interface MomentsViewController()<UITableViewDataSource, UITableViewDelegate>
 
@@ -26,6 +27,7 @@ static NSString *cellIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [SVProgressHUD showWithStatus:@"加载中"];
     [self setNavigationBar];
     [self createTableView];
     [self createHeaderView];
@@ -66,6 +68,7 @@ static NSString *cellIdentifier = @"cell";
 - (void)createMomentsFeed {
     [self.momentsViewModel loadingMomentsFeed:^(NSMutableArray *frameArray) {
         self.frameArray = frameArray;
+        [SVProgressHUD dismiss];
         [self.tableView reloadData];
     }failure:^{
         NSLog(@"%s", __func__);
