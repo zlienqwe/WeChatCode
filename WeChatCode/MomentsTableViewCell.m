@@ -9,7 +9,6 @@
 #import "MomentsTableViewCell.h"
 #import "Feed.h"
 #import "UIImageView+WebCache.h"
-
 @interface MomentsTableViewCell()
 
 @property (nonatomic, strong) UILabel *content;
@@ -25,43 +24,46 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ([super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.accessoryType = UITableViewCellAccessoryNone;
-        self.selectionStyle = UITableViewCellSelectionStyleNone;    
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        [self createUIComponent];
     }
     return self;
 }
 
-- (void)createUIComponent:(Feed *)feed {
-    self.content = [[UILabel alloc] init];
-    self.content.text = feed.content;
+- (void)createUIComponent {
+    self.content = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.content sizeToFit];
     self.content.numberOfLines = 0;
     [self.contentView addSubview:self.content];
     
-    self.senderName = [[UILabel alloc] init];
-    self.senderName.text = feed.senderName;
+    self.senderName = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.senderName];
     
-    self.avatar = [[UIImageView alloc] init];
-    self.avatar = [self buildImageViewWithUrl:feed.avatarString];
+    self.avatar = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.avatar];
     
-    self.image = [[UIImageView alloc] init];
-    self.image = [self buildImageViewWithUrl:feed.imageString];
+    self.image = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:self.image];
+    
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    self.avatar.frame = self.feedFrame.avatarFrame;
-    self.senderName.frame = self.feedFrame.nickFrame;
-    self.content.frame = self.feedFrame.contentFrame;
-    self.image.frame = self.feedFrame.imageFrame;
+- (void)updateUIComponentWithFeedFrame:(FeedFrame *)feedFrame {
+    self.content.text = feedFrame.feed.content;
+    self.senderName.text = feedFrame.feed.senderName;
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:feedFrame.feed.avatarString] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    [self.image sd_setImageWithURL:[NSURL URLWithString:feedFrame.feed.imageString] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    [self updateCellFrame:(FeedFrame *)feedFrame];
 }
 
-- (UIImageView *)buildImageViewWithUrl:(NSString *)URL {
-    UIImageView *imageView = [[UIImageView alloc] init];
-    [imageView sd_setImageWithURL:(NSURL *)(URL) placeholderImage:[UIImage imageNamed:@"placeholder"]];
-    return imageView;
+- (void)updateCellFrame:(FeedFrame *)feedFrame {
+    self.avatar.frame = feedFrame.avatarFrame;
+    self.senderName.frame = feedFrame.nickFrame;
+    self.content.frame = feedFrame.contentFrame;
+    self.image.frame = feedFrame.imageFrame;
+    
+    CGRect newFrame = [self frame];
+    newFrame.size.height = feedFrame.cellHeight;
+    self.frame = newFrame;
 }
 
 @end

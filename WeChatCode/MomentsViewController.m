@@ -16,7 +16,6 @@
 static NSString *cellIdentifier = @"cell";
 @interface MomentsViewController()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *feedArray;
 @property (nonatomic, strong) NSMutableArray *frameArray;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MomentsViewModel *momentsViewModel;
@@ -33,6 +32,10 @@ static NSString *cellIdentifier = @"cell";
     [self createHeaderView];
     [self createMomentsFeed];
     self.title = @"朋友圈";
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+        [SVProgressHUD dismiss];
 }
 
 -(instancetype)init {
@@ -84,10 +87,10 @@ static NSString *cellIdentifier = @"cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell = [[MomentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    FeedFrame *feedFrame = self.frameArray[indexPath.row];
-    [cell createUIComponent:feedFrame.feed];
-    cell.feedFrame = [self.frameArray objectAtIndex:indexPath.row];
+    if (cell == nil) {
+        cell = [[MomentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    [cell updateUIComponentWithFeedFrame:[self.frameArray objectAtIndex:indexPath.row]];
     return cell;
 }
 

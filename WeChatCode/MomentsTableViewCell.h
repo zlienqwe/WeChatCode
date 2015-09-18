@@ -12,8 +12,6 @@
 
 @interface MomentsTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) FeedFrame *feedFrame;
-
-- (void)createUIComponent:(Feed *)feed;
+- (void)updateUIComponentWithFeedFrame:(FeedFrame *)feedFrame;
 
 @end
