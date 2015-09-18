@@ -54,11 +54,10 @@
         self.contentFrame = CGRectMake(contentX, contentY, contentW, contentH);
         
         if (self.feed.imageString) {
-            CGFloat imageWH = 100;
+            CGFloat imageWH = 150;
             CGFloat imageX = contentX;
             CGFloat imageY = CGRectGetMaxY(self.contentFrame) + margin;
             self.imageFrame = CGRectMake(imageX, imageY, imageWH, imageWH);
-            
             _cellHeight = CGRectGetMaxY(self.imageFrame);
         } else {
             _cellHeight = CGRectGetMaxY(self.contentFrame);

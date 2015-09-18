@@ -8,7 +8,6 @@
 
 #import "MomentsViewController.h"
 #import "MomentsViewModel.h"
-#import "Feed.h"
 #import "MomentsTableViewCell.h"
 #import "MomentsAPI.h"
 #import "HeaderView.h"
@@ -19,7 +18,7 @@ static NSString *cellIdentifier = @"cell";
 @property (nonatomic, strong) NSMutableArray *feedArray;
 @property (nonatomic, strong) NSMutableArray *frameArray;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) MomentsViewModel *momentViewModel;
+@property (nonatomic, strong) MomentsViewModel *momentsViewModel;
 
 @end
 
@@ -34,9 +33,9 @@ static NSString *cellIdentifier = @"cell";
     self.title = @"朋友圈";
 }
 
--(instancetype)init{
+-(instancetype)init {
     if ([super init]) {
-        self.momentViewModel = [[MomentsViewModel alloc] init];
+        self.momentsViewModel = [[MomentsViewModel alloc] init];
         self.frameArray = [[NSMutableArray alloc] init];
     }
     return self;
@@ -51,13 +50,13 @@ static NSString *cellIdentifier = @"cell";
     CGRect frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60);
     self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     self.tableView.dataSource = self;
-    self.tableView.delegate=self;
+    self.tableView.delegate = self;
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:self.tableView];
 }
 
 - (void)createHeaderView {
-    [self.momentViewModel loadingHeaderView:^(HeaderView *headerView){
+    [self.momentsViewModel loadingHeaderView:^(HeaderView *headerView) {
         self.tableView.tableHeaderView = headerView;
     } failure:^{
         NSLog(@"%s", __func__);
@@ -65,14 +64,13 @@ static NSString *cellIdentifier = @"cell";
 }
 
 - (void)createMomentsFeed {
-    [self.momentViewModel loadingMomentsFeed:^(NSMutableArray *frameArray){
+    [self.momentsViewModel loadingMomentsFeed:^(NSMutableArray *frameArray) {
         self.frameArray = frameArray;
         [self.tableView reloadData];
     }failure:^{
         NSLog(@"%s", __func__);
     }];
 }
-
 
 
 #pragma mark - table view delegate
@@ -83,7 +81,7 @@ static NSString *cellIdentifier = @"cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell = [[MomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    cell = [[MomentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     FeedFrame *feedFrame = self.frameArray[indexPath.row];
     [cell createUIComponent:feedFrame.feed];
     cell.feedFrame = [self.frameArray objectAtIndex:indexPath.row];

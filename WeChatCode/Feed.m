@@ -13,13 +13,12 @@
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if ([self init]) {
         NSDictionary *tempDic = dic[@"sender"];
-        
-        self.content = dic[@"content"];
         self.senderName = tempDic[@"username"];
         self.avatarString = tempDic[@"avatar"];
         self.nick = tempDic[@"nick"];
+        self.content = dic[@"content"];
         self.imagesArray = dic[@"images"];
-        self.imageString = _imagesArray[0][@"url"];
+        self.imageString = self.imagesArray[0][@"url"];
     }
     return self;
 }

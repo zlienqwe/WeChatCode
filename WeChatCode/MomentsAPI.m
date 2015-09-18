@@ -24,7 +24,7 @@
         failure();
     }];
 }
-    
+
 + (void)requestFeeds:(void (^)())success failure:(void (^)())failure {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:ContentUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
